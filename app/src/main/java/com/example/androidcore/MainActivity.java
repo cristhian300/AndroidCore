@@ -46,8 +46,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent paramView;
             paramView = new Intent("android.intent.action.SEND");
             paramView.setType("text/plain");
-            paramView.putExtra("android.intent.extra.TEXT", "Descarga nuestra app de la PlayStore" +
-                    " \n" + "https://play.google.com/store/apps/details?id=app.product.ditec.ditec_pasajero");
+//            paramView.putExtra("android.intent.extra.TEXT", "Descarga nuestra app de la PlayStore" +
+//                    " \n" + "https://play.google.com/store/apps/details?id=app.product.ditec.ditec_pasajero");
+            paramView.putExtra("android.intent.extra.TEXT", "Visita Nuestra Pagina" +
+                    " \n" + "https://www.facebook.com/lapamplonera");
+
+
             startActivity(Intent.createChooser(paramView, "Comparte Nuestro aplicativo"));
             return true;
         }
