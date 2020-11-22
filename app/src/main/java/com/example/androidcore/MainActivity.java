@@ -97,9 +97,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_ubicacion:
                 startActivity(new Intent(this, Ubicacion.class));
                 break;
-            case R.id.nav_multimedia:
-//                startActivity(new Intent(this, Multimedia.class));
-//                break;
+            case R.id.nav_menu:
+                startActivity(new Intent(this, ProductRecyclerView.class));
+                break;
 //            case R.id.nav_permisos:
 //                startActivity(new Intent(this, Permisos.class));
 //                break;

@@ -7,9 +7,9 @@
         <item android:id="@+id/nav_intenciones"
             android:icon="@android:drawable/ic_menu_gallery"
             android:title="Intenciones" />
-        <item android:id="@+id/nav_multimedia"
+        <item android:id="@+id/nav_menu"
             android:icon="@android:drawable/ic_menu_gallery"
-            android:title="Multimedia" />
+            android:title="Menú" />
 <!--        <item android:id="@+id/nav_permisos"-->
 <!--            android:icon="@android:drawable/ic_menu_gallery"-->
 <!--            android:title="Permisos" />-->
