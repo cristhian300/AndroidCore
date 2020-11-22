@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawerlayout);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 // Navigation Drawer
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-
+   //Incrustar menu cabecera
     @Override public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu1, menu);
         return true; /** true -> el menú ya está visible */
@@ -72,8 +74,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return super.onOptionsItemSelected(item);
     }
 
+    //Ventana de navagacion Lateral
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        return false;
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem){
+        switch (menuItem.getItemId()) {
+            case R.id.nav_compartir:
+                Intent paramView;
+                paramView = new Intent("android.intent.action.SEND");
+                paramView.setType("text/plain");
+                paramView.putExtra("android.intent.extra.TEXT", "Descarga nuestra app de la PlayStore" +
+                        " \n" + "https://play.google.com/store/apps/details?id=app.product.demarktec.alo14_pasajero");
+                startActivity(Intent.createChooser(paramView, "Comparte Nuestro aplicativo"));
+                break;
+            case R.id.nav_salir:
+                finish();
+                break;
+
+            case R.id.nav_ubicacion:
+                startActivity(new Intent(this, Ubicacion.class));
+                break;
+            case R.id.nav_multimedia:
+//                startActivity(new Intent(this, Multimedia.class));
+//                break;
+//            case R.id.nav_permisos:
+//                startActivity(new Intent(this, Permisos.class));
+//                break;
+//            case R.id.nav_intenciones:
+//                startActivity(new Intent(this, Intenciones.class));
+//                break;
+//            case R.id.nav_comunicacion:
+//                startActivity(new Intent(this, Comunicacion1.class));
+//                break;
+            default:
+                break;
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(
+                R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
