@@ -19,36 +19,14 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#0B0A0A"
+            android:background="@color/colorPrimary"
             android:gravity="center"
             android:minHeight="?attr/actionBarSize"
             tools:ignore="MissingConstraints" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <include layout="@layout/content_main" />
 
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="236dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/presentacion_principal"></ImageView>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="236dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/cocina_pizza"></ImageView>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="144dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="10dp"
-        android:background="#009688"
-        android:drawableTop="@android:drawable/ic_menu_call"
-        android:gravity="center"
-        android:text="WHATSAPP"
-        android:textColor="#FFFFFF"
-        android:textStyle="bold" />
 </LinearLayout>

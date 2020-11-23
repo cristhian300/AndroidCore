@@ -16,7 +16,11 @@ public class ProductosRecyclerViewAdaptador extends RecyclerView.Adapter<Product
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = inflador.inflate(R.layout.option_producto, parent, false);
+
+
+
+        View v = inflador.from(parent.getContext()).inflate(R.layout.option_producto,null,false);
+        //View v = inflador.inflate(R.layout.option_producto, parent, false);
         //entra a la clase ViewHolder
         return new ViewHolder(v);
     }
@@ -47,9 +51,11 @@ public class ProductosRecyclerViewAdaptador extends RecyclerView.Adapter<Product
     public List<ProductoModelo>  ProductoList;
     private LayoutInflater inflador;
     Context micontext;
-    public ProductosRecyclerViewAdaptador(Context context,  List<ProductoModelo> productoList) {
+    public ProductosRecyclerViewAdaptador(
+            //Context context,
+            List<ProductoModelo> productoList) {
         ProductoList = productoList;
-        inflador = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        micontext=context;
+      //  inflador = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+      //  micontext=context;
     }
 }

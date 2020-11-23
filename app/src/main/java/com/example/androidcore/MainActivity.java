@@ -6,16 +6,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.androidcore.framentos_drawer.productos.ProductosActivity;
 import com.google.android.material.navigation.NavigationView;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private AppBarConfiguration mAppBarConfiguration;
 
 
     @Override
@@ -29,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
 
+
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
                 drawer, toolbar, R.string.drawer_open, R.string. drawer_close);
 
@@ -37,7 +45,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+
+        mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.nav_product )
+                .setDrawerLayout(drawer)
+                .build();
+
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
+        NavigationUI.setupWithNavController(navigationView, navController);
+//        navigationView.setNavigationItemSelectedListener(this);
     }
 
    //Incrustar menu cabecera
@@ -106,15 +123,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_menu:
                 startActivity(new Intent(this, ProductRecyclerView.class));
                 break;
-//            case R.id.nav_permisos:
-//                startActivity(new Intent(this, Permisos.class));
-//                break;
-//            case R.id.nav_intenciones:
-//                startActivity(new Intent(this, Intenciones.class));
-//                break;
-//            case R.id.nav_comunicacion:
-//                startActivity(new Intent(this, Comunicacion1.class));
-//                break;
+
+            case R.id.nav_product:
+                startActivity(new Intent(this, ProductosActivity.class));
+                break;
             default:
                 break;
         }
