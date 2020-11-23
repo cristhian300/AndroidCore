@@ -9,15 +9,24 @@
     tools:context=".MainActivity"
     >
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#C11212"
-        android:minHeight="?attr/actionBarSize"
-        tools:ignore="MissingConstraints"
-        android:gravity="center"
-        />
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0B0A0A"
+            android:gravity="center"
+            android:minHeight="?attr/actionBarSize"
+            tools:ignore="MissingConstraints" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
 
     <ImageView
         android:layout_width="match_parent"
