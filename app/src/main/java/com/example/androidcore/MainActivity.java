@@ -6,21 +6,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
+import com.example.androidcore.framentos_drawer.home.HomeActivity;
 import com.example.androidcore.framentos_drawer.productos.ProductosActivity;
 import com.google.android.material.navigation.NavigationView;
 
+import java.net.URLEncoder;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+         {
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -32,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-// Navigation Drawer
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
 
@@ -44,7 +53,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        Fragment fragment=new HomeActivity();
+        getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment,fragment).commit();
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_product )
@@ -53,8 +63,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
-//        navigationView.setNavigationItemSelectedListener(this);
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+//        NavigationUI.setupWithNavController(navigationView, navController);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
    //Incrustar menu cabecera
@@ -102,37 +114,53 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     //Ventana de navagacion Lateral
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem){
+
+        Fragment miFragment=null;
         switch (menuItem.getItemId()) {
-            case R.id.nav_compartir:
-                Intent paramView;
-                paramView = new Intent("android.intent.action.SEND");
-                paramView.setType("text/plain");
-                paramView.putExtra("android.intent.extra.TEXT", "Descarga nuestra app de la PlayStore" +
-                        " \n" + "https://play.google.com/store/apps/details?id=app.product.demarktec.alo14_pasajero");
-                startActivity(Intent.createChooser(paramView, "Comparte Nuestro aplicativo"));
-                break;
+
             case R.id.nav_salir:
                 finish();
                 break;
 
-            case R.id.nav_ubicacion:
-                startActivity(new Intent(this, Ubicacion.class));
-                break;
-            case R.id.nav_menu:
-                startActivity(new Intent(this, ProductRecyclerView.class));
-                break;
+            case R.id.nav_home:
+                miFragment=new HomeActivity();
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,miFragment).commit();
+           break;
 
             case R.id.nav_product:
-                startActivity(new Intent(this, ProductosActivity.class));
-                break;
+                miFragment=new ProductosActivity();
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,miFragment).commit();
+               break;
             default:
                 break;
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(
-                R.id.drawer_layout);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById( R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void Pedidos(View view) {
+
+        PackageManager packageManager = this.getPackageManager();
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        try {
+            String url = "https://api.whatsapp.com/send?phone=" + "+51994057006" + "&text="
+                    + URLEncoder.encode("Buen día, me gustaría hacer un pedido ... ", "UTF-8");
+            i.setPackage("com.whatsapp");
+            i.setData(Uri.parse(url));
+            if (i.resolveActivity(packageManager) != null) {
+                this.startActivity(i);
+            }
+            else {
+                Toast.makeText(this, "No tiene Whatsapp porfavor instale la app"
+                        , Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -2,30 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+
+        android:background="#100F0F"
+        android:gravity="center"
+        android:text="BIENVENIDO A PIZZERIA LA PAMPLONERA"
+        android:textColor="#F8F5F5"
+        android:textSize="17dp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+
+        android:background="#009688"
+        android:drawableRight="@android:drawable/ic_menu_call"
+        android:gravity="center"
+        android:text="PEDIDOS AL WHATSAPP 994057006"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="17dp"
+        android:onClick="Pedidos"
+        />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="236dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/presentacion_principal"></ImageView>
+            android:src="@drawable/presentacion_principal"
+            android:layout_margin="10dp"
+            ></ImageView>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="236dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/cocina_pizza"></ImageView>
+            android:src="@drawable/cocina_pizza"
+            android:layout_margin="10dp"
+            ></ImageView>
 
-      <Button
-            android:id="@+id/button"
-            android:layout_width="144dp"
-            android:layout_height="56dp"
-            android:layout_marginTop="10dp"
-            android:background="#009688"
-            android:drawableTop="@android:drawable/ic_menu_call"
-            android:gravity="center"
-            android:text="WHATSAPP"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
+
 </LinearLayout>
