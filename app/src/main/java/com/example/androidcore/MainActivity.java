@@ -40,11 +40,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.drawerlayout);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        toolbar.setTitle("Holaa");
+       setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
                 drawer, toolbar, R.string.drawer_open, R.string. drawer_close);
@@ -55,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Fragment fragment=new HomeActivity();
         getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment,fragment).commit();
+        toolbar.setTitle("");
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_product )
@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 //        NavigationUI.setupWithNavController(navigationView, navController);
         navigationView.setNavigationItemSelectedListener(this);
+
+//        navigationView.setBackgroundColor(getResources().getColor(R.color.colorAccent));
     }
 
    //Incrustar menu cabecera
@@ -119,20 +121,52 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem){
 
         Fragment miFragment=null;
+//        ActionBar actionBar = getSupportActionBar();
+//        // actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+//        actionBar.setDisplayShowTitleEnabled(true);
+//        actionBar.setTitle(mTitle);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("");
+//        setSupportActionBar(toolbar);
+//        toolbar.setTitle("escape");
+
         switch (menuItem.getItemId()) {
 
             case R.id.nav_salir:
                 finish();
+//                menuItem.getTitle();
+
                 break;
+
+
+            case R.id.nav_ubicacion:
+
+                double latitud=-12.139310;
+                double longitud= -76.958203;
+                String label = "PIZZERIA LA PAMPLONERA";
+                String uriBegin ="geo:" +latitud+","+longitud;
+                String query = latitud + ","+ longitud+ "("+label+")";
+                String encodedQuery = Uri.encode(query);
+                String uriString = uriBegin + "?q="+encodedQuery + "&z=16";
+                Uri uri = Uri.parse(uriString);
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        uri);
+                startActivity(intent);
+
+                break;
+
 
             case R.id.nav_home:
                 miFragment=new HomeActivity();
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,miFragment).commit();
+//                toolbar.setTitle(menuItem.getTitle());
            break;
 
             case R.id.nav_product:
                 miFragment=new ProductosActivity();
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,miFragment).commit();
+//                toolbar.setTitle(menuItem.getTitle());
                break;
             default:
                 break;
@@ -140,6 +174,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         DrawerLayout drawer = (DrawerLayout) findViewById( R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+
+
         return true;
     }
 
@@ -163,4 +199,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             e.printStackTrace();
         }
     }
-}
+
+             public void OpcionFace(View view) {
+
+                 Intent intent = new Intent(Intent.ACTION_VIEW,
+                         Uri.parse("https://www.facebook.com/lapamplonera"));
+                 startActivity(intent);
+
+             }
+
+             public void OpcionInstagran(View view) {
+
+                 Intent intent = new Intent(Intent.ACTION_VIEW,
+                         Uri.parse("https://www.instagram.com/lapamplonera/"));
+                 startActivity(intent);
+             }
+
+         }

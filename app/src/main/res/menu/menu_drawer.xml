@@ -2,25 +2,22 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@android:drawable/ic_menu_view"
-            android:title="Inicio" />
+            android:icon="@drawable/ic_home"
+            android:title="Inicio"
+            android:checkable="true"
+            />
         <item
             android:id="@+id/nav_product"
-            android:icon="@android:drawable/ic_menu_view"
-            android:title="Producto" />
+            android:icon="@drawable/ic_lista"
+            android:title="Producto"
+            android:checkable="true"/>
 
-        <item android:id="@+id/nav_intenciones"
-            android:icon="@android:drawable/ic_menu_gallery"
-            android:title="Intenciones" />
-        <item android:id="@+id/nav_menu"
-            android:icon="@android:drawable/ic_menu_gallery"
-            android:title="Menú" />
-<!--        <item android:id="@+id/nav_permisos"-->
-<!--            android:icon="@android:drawable/ic_menu_gallery"-->
-<!--            android:title="Permisos" />-->
+
         <item android:id="@+id/nav_ubicacion"
-            android:icon="@android:drawable/ic_menu_gallery"
-            android:title="Ubicacion" />
+            android:icon="@drawable/ic_baseline_location_on_24"
+            android:title="Ubicacion"
+            android:checkable="true"
+            />
 
 
     </group>
@@ -28,7 +25,9 @@
         <menu>
             <item android:id="@+id/nav_compartir"
                 android:icon="@android:drawable/ic_menu_share"
-                android:title="Compartir" />
+                android:title="Compartir"
+                android:checkable="true"
+                />
             <item android:id="@+id/nav_salir"
                 android:icon="@android:drawable/ic_menu_manage"
                 android:title="Salir" />

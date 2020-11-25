@@ -12,8 +12,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="64dp"
-        android:layout_height="76dp"
+        android:layout_width="81dp"
+        android:layout_height="97dp"
         android:paddingTop="16dp"
         android:src="@drawable/icono_pamplonera" />
 
