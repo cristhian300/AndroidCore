@@ -26,7 +26,7 @@
 
                 android:background="#100F0F"
                 android:gravity="center"
-                android:text="BIENVENIDO A PIZZERIA LA PAMPLONERA"
+                android:text="DISFRUTA NUESTRAS PIZZAS"
                 android:textColor="#F8F5F5"
                 android:textSize="17dp"
                 android:textStyle="bold" />

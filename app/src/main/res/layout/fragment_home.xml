@@ -17,19 +17,26 @@
             android:orientation="vertical">
 
 
-
             <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
 
-        android:background="#100F0F"
-        android:gravity="center"
-        android:text="BIENVENIDO A PIZZERIA LA PAMPLONERA"
-        android:textColor="#F8F5F5"
-        android:textSize="17dp"
-        android:textStyle="bold" />
+                android:background="#100F0F"
+                android:gravity="center"
+                android:text="BIENVENIDO A PIZZERIA LA PAMPLONERA"
+                android:textColor="#F8F5F5"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/presentacion_good"></ImageView>
+
 
 
             <Button
@@ -40,7 +47,7 @@
 
                 android:layout_margin="10dp"
                 android:background="#009688"
-                android:drawableRight="@android:drawable/ic_menu_call"
+                android:drawableRight="@drawable/ic_delivery"
                 android:gravity="center"
                 android:onClick="Pedidos"
                 android:text="PEDIDOS AL WHATSAPP 994057006"

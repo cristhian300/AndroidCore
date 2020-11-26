@@ -18,7 +18,7 @@
         <activity android:name=".Ubicacion" />
         <activity
             android:name=".MainActivity"
-            android:label=""
+            android:label="La Pamplonera Pizzeria"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
