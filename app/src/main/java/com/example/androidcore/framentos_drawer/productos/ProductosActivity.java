@@ -58,10 +58,14 @@ public class ProductosActivity extends Fragment {
     public List<ProductoModelo> ObtenerProductos() {
 
         List<ProductoModelo> listaProducto = new ArrayList<>();
-        listaProducto.add(new ProductoModelo("Pizza1", R.drawable.pizza1));
-        listaProducto.add(new ProductoModelo("Pizza2", R.drawable.americana));
-        listaProducto.add(new ProductoModelo("Pizza3", R.drawable.pan_al_ajo));
-//    listaProducto.add(new  ProductoModelo("Pizza4",R.drawable.menu_total));
+
+        listaProducto.add(new ProductoModelo("Pizza Hawaiana", R.drawable.pizza_hawaiana));
+        listaProducto.add(new ProductoModelo("Pizza Americana", R.drawable.pizza_americana));
+        listaProducto.add(new ProductoModelo("Pizza Vegetariana", R.drawable.pizza_vegetariana));
+        listaProducto.add(new ProductoModelo("Pizza Napolitana", R.drawable.pizza1));
+        listaProducto.add(new ProductoModelo("Pizza Suprema", R.drawable.americana));
+        listaProducto.add(new ProductoModelo("Pan al ajo", R.drawable.pan_al_ajo));
+
         return listaProducto;
     }
 }

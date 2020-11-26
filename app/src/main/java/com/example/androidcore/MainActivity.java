@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.androidcore.framentos_drawer.carta.CardFragment;
 import com.example.androidcore.framentos_drawer.home.HomeActivity;
 import com.example.androidcore.framentos_drawer.productos.ProductosActivity;
 import com.google.android.material.navigation.NavigationView;
@@ -156,7 +157,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 break;
 
+            case R.id.nav_carta:
+                miFragment=new CardFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,miFragment).commit();
 
+                break;
             case R.id.nav_home:
                 miFragment=new HomeActivity();
                 getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,miFragment).commit();

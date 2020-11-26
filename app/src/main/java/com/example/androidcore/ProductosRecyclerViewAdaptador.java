@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,6 +30,7 @@ public class ProductosRecyclerViewAdaptador extends RecyclerView.Adapter<Product
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
         holder.imgProduct.setImageResource(ProductoList.get(position).getFotoProducto()) ;
+        holder.txtProduct.setText(ProductoList.get(position).getNombreProducto());
     }
 
     @Override
@@ -39,11 +41,12 @@ public class ProductosRecyclerViewAdaptador extends RecyclerView.Adapter<Product
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView imgProduct;
+        TextView txtProduct;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgProduct = itemView.findViewById(R.id.imgProducto);
-
+            txtProduct = itemView.findViewById(R.id.txtProduct);
 
         }
     }

@@ -6,6 +6,13 @@
             android:title="Inicio"
             android:checkable="true"
             />
+
+        <item
+            android:id="@+id/nav_carta"
+            android:icon="@drawable/ic_lista"
+            android:title="La Carta"
+            android:checkable="true"/>
+
         <item
             android:id="@+id/nav_product"
             android:icon="@drawable/ic_lista"

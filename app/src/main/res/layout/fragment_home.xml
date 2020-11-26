@@ -86,8 +86,8 @@
 
                 <ImageButton
                     android:id="@+id/imageButton1"
-                    android:layout_width="62dp"
-                    android:layout_height="54dp"
+                    android:layout_width="50dp"
+                    android:layout_height="45dp"
 
                     android:layout_margin="5dp"
                     android:adjustViewBounds="false"
@@ -96,8 +96,8 @@
 
                 <ImageButton
                     android:id="@+id/imageButton2"
-                    android:layout_width="62dp"
-                    android:layout_height="54dp"
+                    android:layout_width="50dp"
+                    android:layout_height="45dp"
 
                     android:layout_margin="5dp"
                     android:adjustViewBounds="false"
