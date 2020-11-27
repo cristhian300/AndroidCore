@@ -1,4 +1,4 @@
-package com.example.androidcore;
+package com.magic.androidcore;
 
 import androidx.appcompat.app.AppCompatActivity;
 

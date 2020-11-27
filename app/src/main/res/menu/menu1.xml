@@ -21,4 +21,14 @@
         android:title="Compartir"
 
         app:showAsAction="always" />
+
+    <item
+        android:id="@+id/accion_phone"
+        android:icon="@android:drawable/ic_menu_call"
+        android:orderInCategory="1"
+        android:title="Compartir"
+
+        app:showAsAction="always"
+
+        />
 </menu>

@@ -1,22 +1,19 @@
-package com.example.androidcore.framentos_drawer.productos;
+package com.magic.androidcore.framentos_drawer.productos;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.androidcore.ProductoModelo;
-import com.example.androidcore.ProductosRecyclerViewAdaptador;
-import com.example.androidcore.R;
+import com.magic.androidcore.ProductoModelo;
+import com.magic.androidcore.ProductosRecyclerViewAdaptador;
+import com.magic.androidcore.R;
 
 import java.util.ArrayList;
 import java.util.List;

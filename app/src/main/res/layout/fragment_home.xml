@@ -50,7 +50,7 @@
                 android:drawableRight="@drawable/ic_delivery"
                 android:gravity="center"
                 android:onClick="Pedidos"
-                android:text="PEDIDOS AL WHATSAPP 994057006"
+                android:text="PEDIDOS AL  994057006"
                 android:textColor="#FFFFFF"
                 android:textSize="17dp"
                 android:textStyle="bold" />

@@ -1,4 +1,4 @@
-package com.example.androidcore;
+package com.magic.androidcore;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -21,9 +21,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.androidcore.framentos_drawer.carta.CardFragment;
-import com.example.androidcore.framentos_drawer.home.HomeActivity;
-import com.example.androidcore.framentos_drawer.productos.ProductosActivity;
+import com.magic.androidcore.framentos_drawer.carta.CardFragment;
+import com.magic.androidcore.framentos_drawer.home.HomeActivity;
+import com.magic.androidcore.framentos_drawer.productos.ProductosActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import java.net.URLEncoder;

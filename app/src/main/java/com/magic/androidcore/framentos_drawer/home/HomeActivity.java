@@ -1,4 +1,4 @@
-package com.example.androidcore.framentos_drawer.home;
+package com.magic.androidcore.framentos_drawer.home;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.androidcore.R;
+import com.magic.androidcore.R;
 
 
 public class HomeActivity extends Fragment {

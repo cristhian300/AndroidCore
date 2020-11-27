@@ -1,4 +1,4 @@
-package com.example.androidcore;
+package com.magic.androidcore;
 
 public class ProductoModelo {
 

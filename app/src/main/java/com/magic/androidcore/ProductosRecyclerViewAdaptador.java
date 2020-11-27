@@ -1,4 +1,4 @@
-package com.example.androidcore;
+package com.magic.androidcore;
 
 import android.content.Context;
 import android.view.LayoutInflater;
