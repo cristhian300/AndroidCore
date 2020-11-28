@@ -15,8 +15,8 @@
 
         <item
             android:id="@+id/nav_product"
-            android:icon="@drawable/ic_lista"
-            android:title="Producto"
+            android:icon="@drawable/ic_pizza"
+            android:title="Pizzas"
             android:checkable="true"/>
 
 

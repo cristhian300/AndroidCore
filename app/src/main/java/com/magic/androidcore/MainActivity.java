@@ -81,22 +81,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.accion_compartir) {
-            Intent paramView;
-            paramView = new Intent("android.intent.action.SEND");
-            paramView.setType("text/plain");
-//            paramView.putExtra("android.intent.extra.TEXT", "Descarga nuestra app de la PlayStore" +
-//                    " \n" + "https://play.google.com/store/apps/details?id=app.product.ditec.ditec_pasajero");
-            paramView.putExtra("android.intent.extra.TEXT", "Visita Nuestra Pagina" +
-                    " \n" + "https://www.facebook.com/lapamplonera");
-
-
-            startActivity(Intent.createChooser(paramView, "Comparte Nuestro aplicativo"));
+            Compartir();
             return true;
         }
 //        if (id == R.id.accion_salir) {
 //            finish();
 //            return true;
 //        }
+
+        if (id == R.id.accion_phone){
+
+            MensajeWhas();
+
+            return true;
+        }
 //        if (id == R.id.activity_comunicacion) {
 //            startActivity(new Intent(this, Comunicacion1.class));
 //            return true;
@@ -139,7 +137,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                menuItem.getTitle();
 
                 break;
-
+            case R.id.nav_compartir:
+                Compartir();
+                break;
 
             case R.id.nav_ubicacion:
 
@@ -185,25 +185,45 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     public void Pedidos(View view) {
-
-        PackageManager packageManager = this.getPackageManager();
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        try {
-            String url = "https://api.whatsapp.com/send?phone=" + "+51994057006" + "&text="
-                    + URLEncoder.encode("Buen día, me gustaría hacer un pedido ... ", "UTF-8");
-            i.setPackage("com.whatsapp");
-            i.setData(Uri.parse(url));
-            if (i.resolveActivity(packageManager) != null) {
-                this.startActivity(i);
-            }
-            else {
-                Toast.makeText(this, "No tiene Whatsapp porfavor instale la app"
-                        , Toast.LENGTH_LONG).show();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        MensajeWhas();
     }
+
+    public void MensajeWhas(){
+
+             PackageManager packageManager = this.getPackageManager();
+             Intent i = new Intent(Intent.ACTION_VIEW);
+             try {
+                 String url = "https://api.whatsapp.com/send?phone=" + "+51994057006" + "&text="
+                         + URLEncoder.encode("Buen día, me gustaría hacer un pedido ... ", "UTF-8");
+                 i.setPackage("com.whatsapp");
+                 i.setData(Uri.parse(url));
+                 if (i.resolveActivity(packageManager) != null) {
+                     this.startActivity(i);
+                 }
+                 else {
+                     Toast.makeText(this, "No tiene Whatsapp porfavor instale la app"
+                             , Toast.LENGTH_LONG).show();
+                 }
+             } catch (Exception e) {
+                 e.printStackTrace();
+             }
+
+         }
+
+         public void Compartir(){
+             Intent paramView;
+             paramView = new Intent("android.intent.action.SEND");
+             paramView.setType("text/plain");
+//            paramView.putExtra("android.intent.extra.TEXT", "Descarga nuestra app de la PlayStore" +
+//                    " \n" + "https://play.google.com/store/apps/details?id=app.product.ditec.ditec_pasajero");
+             paramView.putExtra("android.intent.extra.TEXT", "Visita Nuestra Pagina" +
+                     " \n" + "https://www.facebook.com/lapamplonera");
+
+
+             startActivity(Intent.createChooser(paramView, "Comparte Nuestro aplicativo"));
+
+         }
+
 
              public void OpcionFace(View view) {
 
