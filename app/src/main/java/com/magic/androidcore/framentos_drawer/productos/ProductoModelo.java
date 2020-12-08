@@ -1,4 +1,4 @@
-package com.magic.androidcore;
+package com.magic.androidcore.framentos_drawer.productos;
 
 public class ProductoModelo {
 

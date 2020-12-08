@@ -11,8 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.magic.androidcore.ProductoModelo;
-import com.magic.androidcore.ProductosRecyclerViewAdaptador;
 import com.magic.androidcore.R;
 
 import java.util.ArrayList;

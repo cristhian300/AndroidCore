@@ -19,7 +19,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.MediaController;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.magic.androidcore.framentos_drawer.carta.CardFragment;
 import com.magic.androidcore.framentos_drawer.home.HomeActivity;
@@ -53,8 +56,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        Fragment fragment=new HomeActivity();
-        getSupportFragmentManager().beginTransaction().add(R.id.nav_host_fragment,fragment).commit();
+
+        Fragment  miFragment=new HomeActivity();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,miFragment).commit();
+
 
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -70,6 +75,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
 //        navigationView.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+
+
     }
 
    //Incrustar menu cabecera
@@ -95,18 +102,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             return true;
         }
-//        if (id == R.id.activity_comunicacion) {
-//            startActivity(new Intent(this, Comunicacion1.class));
-//            return true;
-//        }
-//        if (id == R.id.activity_intenciones) {
-//            startActivity(new Intent(this, Intenciones.class));
-//            return true;
-//        }
-//        if (id == R.id.activity_multimedia) {
-//            startActivity(new Intent(this, Multimedia.class));
-//            return true;
-//        }
+
+        if (id == R.id.accion_logo){
+
+          //startActivity(new Intent(this, VideoProductActivity.class));
+//         startActivity(new Intent(this, FullScreenVideoActivity.class));
+
+          return true;
+
+
+        }
+
 //        if (id == R.id.activity_permisos) {
 //            startActivity(new Intent(this, Permisos.class));
 //            return true;
@@ -239,5 +245,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                          Uri.parse("https://www.instagram.com/lapamplonera/"));
                  startActivity(intent);
              }
+
+
 
          }
