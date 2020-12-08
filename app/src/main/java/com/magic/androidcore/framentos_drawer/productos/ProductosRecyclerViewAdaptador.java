@@ -16,6 +16,10 @@ import java.util.List;
 
 public class ProductosRecyclerViewAdaptador extends RecyclerView.Adapter<ProductosRecyclerViewAdaptador.ViewHolder> {
 
+
+    public List<ProductoModelo>  ProductoList;
+    private LayoutInflater inflador;
+    Context micontext;
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -53,12 +57,10 @@ public class ProductosRecyclerViewAdaptador extends RecyclerView.Adapter<Product
         }
     }
 
-    public List<ProductoModelo>  ProductoList;
-    private LayoutInflater inflador;
-    Context micontext;
-    public ProductosRecyclerViewAdaptador(
-            //Context context,
-            List<ProductoModelo> productoList) {
+
+    public ProductosRecyclerViewAdaptador(List<ProductoModelo> productoList) {
+
+
         ProductoList = productoList;
       //  inflador = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
       //  micontext=context;
