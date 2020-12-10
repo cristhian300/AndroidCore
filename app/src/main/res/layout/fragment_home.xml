@@ -27,8 +27,9 @@
                 android:gravity="center"
                 android:text="BIENVENIDO A PIZZERIA LA PAMPLONERA"
                 android:textColor="#F8F5F5"
-                android:textSize="17dp"
-                android:textStyle="bold" />
+                android:textSize="17sp"
+                android:textStyle="bold"
+                app:fontFamily="@font/acme" />
 
             <ImageView
                 android:layout_width="match_parent"

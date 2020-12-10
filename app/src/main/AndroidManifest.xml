@@ -20,8 +20,10 @@
             android:name=".framentos_drawer.home.HomeActivity"
             tools:ignore="Instantiatable" />
         <activity android:name=".Ubicacion" />
+
+        <activity android:name=".MainActivity"></activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Presentation"
             android:label="La Pamplonera Pizzeria"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -30,6 +32,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
